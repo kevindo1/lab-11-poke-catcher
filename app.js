@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import pokemon from "./pokemon.js";
+import pokemons from './pokemon.js';
 // initialize global state
 
 const poke1Img = document.getElementById('poke-1-img');
@@ -27,13 +27,13 @@ const encounterPokemon = ()=> {
       randPoke3 = Math.floor(Math.random() * pokemon.length);
     }
 
-    let poke1 = pokemon[randPoke1];
+    let poke1 = pokemons[randPoke1];
     poke1Img.src = poke1.url_image;
 
-    let poke2 = pokemon[randPoke2];
+    let poke2 = pokemons[randPoke2];
     poke2Img.src = poke2.url_image;
 
-    let poke3 = pokemon[randPoke3];
+    let poke3 = pokemons[randPoke3];
     poke3Img.src = poke3.url_image;
 };
 
