@@ -4,8 +4,9 @@ body {
     flex-direction: column;
 }
 
-#poke-catcher {
+.poke-catcher {
     display: flex;
+    flex-direction: row;
 }
 
 img {

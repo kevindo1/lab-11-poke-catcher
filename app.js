@@ -26,8 +26,6 @@ const encounterPokemon = ()=> {
       randPoke2 = Math.floor(Math.random() * pokemon.length);
       randPoke3 = Math.floor(Math.random() * pokemon.length);
     }
-    console.log(randPoke1, randPoke2)
-
 
     let poke1 = pokemon[randPoke1];
     poke1Img.src = poke1.url_image;
@@ -39,8 +37,18 @@ const encounterPokemon = ()=> {
     poke3Img.src = poke3.url_image;
 };
 
+let totalPlays = 0; 
 encounterPokemon();
 
 button.addEventListener('click', ()=> {
+    if (totalPlays >= 10) {
+        window.location.href='./results/index.html';
+    } else {
+      totalPlays++;
+    }
     encounterPokemon();
-})
+});
+
+
+
+
