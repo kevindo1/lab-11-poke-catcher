@@ -2,6 +2,10 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-image: url(../assets/pokemon-stadium.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .poke-catcher {
@@ -19,9 +23,21 @@ input[type=radio] {
 }
 
 input[type=radio]:checked + img {
-    border: 5px solid green;
+    border: 5px solid white;
+    padding: 50px;
+    border-radius: 150px;
 }
 
 input[type=radio] + img {
     border: 5px solid transparent;
+    padding: 50px;
+}
+
+h1 {
+    color: white;
+    font-family: sans-serif;
+}
+
+#submit-button {
+    margin: 50px;
 }

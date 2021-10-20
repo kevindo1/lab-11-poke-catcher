@@ -13,18 +13,18 @@ const button = document.getElementById('submit-button');
   // update DOM to reflect the new state
 
 const encounterPokemon = ()=> {
-    let randPoke1 = Math.floor(Math.random() * pokemon.length);
-    let randPoke2 = Math.floor(Math.random() * pokemon.length);
-    let randPoke3 = Math.floor(Math.random() * pokemon.length);
+    let randPoke1 = Math.floor(Math.random() * pokemons.length);
+    let randPoke2 = Math.floor(Math.random() * pokemons.length);
+    let randPoke3 = Math.floor(Math.random() * pokemons.length);
 
     while (
       randPoke1 === randPoke2 || 
       randPoke1 === randPoke3 ||
       randPoke2 === randPoke3
     ) {
-      randPoke1 = Math.floor(Math.random() * pokemon.length);
-      randPoke2 = Math.floor(Math.random() * pokemon.length);
-      randPoke3 = Math.floor(Math.random() * pokemon.length);
+      randPoke1 = Math.floor(Math.random() * pokemons.length);
+      randPoke2 = Math.floor(Math.random() * pokemons.length);
+      randPoke3 = Math.floor(Math.random() * pokemons.length);
     }
 
     let poke1 = pokemons[randPoke1];

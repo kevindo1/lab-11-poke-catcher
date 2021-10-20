@@ -1,11 +1,11 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 import pokemons from '../pokemon.js'
-import { findById } from '../utils.js';
+import { findById, getPokedex } from '../utils.js';
 
 const test = QUnit.test;
 
-test('findById ', (expect) => {
+test('findById should return the pokemon information', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = {
@@ -48,5 +48,17 @@ test('findById ', (expect) => {
 
     //Expect
     // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
+test('getPokedex should return the pokemon information', (expect) => {
+    localStorage.removeItem('SELECTED');
+    const expected = [
+        { id: '1', name: 'bulbasaur', encountered: '1', caught: '0' }
+    ]
+
+    localStorage.setItem('SELECTED', JSON.stringify(expected));
+
+    const actual = getPokedex();
     expect.deepEqual(actual, expected);
 });

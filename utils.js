@@ -11,6 +11,7 @@ export function findById(id, items) {
 export function getPokedex() {
     const pokeString = localStorage.getItem('SELECTED') || '[]';
     const pokedex = JSON.parse(pokeString);
+
     return pokedex;
 }
 
