@@ -23,14 +23,19 @@ input[type=radio] {
 }
 
 input[type=radio]:checked + img {
-    border: 5px solid white;
+    box-sizing: border-box;
     padding: 50px;
     border-radius: 150px;
+    border-top: 10px solid red;
+    border-bottom: 10px solid white;
 }
 
 input[type=radio] + img {
     border: 5px solid transparent;
     padding: 50px;
+    box-sizing: border-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
 }
 
 h1 {

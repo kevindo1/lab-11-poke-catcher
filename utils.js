@@ -1,31 +1,37 @@
-import pokemon from './pokemon.js'
-
-export function findById(id, items) {
-    for (let item of items) { 
-        if (item.id === id) {
-            return item;
+export function findById(id, pokemons) {
+    for (let pokemon of pokemons) { 
+        if (pokemon.id === id) {
+            return pokemon;
         }
     }
 }
 
 export function getPokedex() {
-    const pokeString = localStorage.getItem('SELECTED') || '[]';
+    const pokeString = localStorage.getItem('RESULTS') || '[]';
     const pokedex = JSON.parse(pokeString);
 
     return pokedex;
 }
 
-export function setPokedex(id) {
-    const pokedex = getPokedex();
-    const pokedexItem = findById(id, pokedex);
+export function encounterPokemon(id) {
+    let pokedex = getPokedex();
+    let pokedexItem = findById(id, pokedex);
 
-    if (pokedexItem.id === id) {
-        pokedexItem.shown++;
+    if (pokedexItem) {
+        pokedexItem.encountered++;
     } else {
-        const newItem = { id: id, shown: 1 };
+        const newPokemon = { id: id, encountered: 1, caught: 0 };
         pokedex.push(newPokemon);
     }
     const stringPokemon = JSON.stringify(pokedex);
-    localStorage.setItem('SELECTED', stringPokemon);
+    localStorage.setItem('RESULTS', stringPokemon);
 }
 
+export function caughtPokemon(id) {
+    let pokedex = getPokedex();
+    let caughtPoke = findById(id, pokedex);
+    
+    caughtPoke.caught++;
+
+    localStorage.setItem('RESULTS', JSON.stringify(pokedex));
+}
