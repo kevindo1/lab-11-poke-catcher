@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 import pokemons from '../pokemon.js'
-import { findById, getPokedex } from '../utils.js';
+import { findById, getPokedex, setPokedex } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -61,4 +61,16 @@ test('getPokedex should return the pokemon information', (expect) => {
 
     const actual = getPokedex();
     expect.deepEqual(actual, expected);
+});
+
+test('setPokedex should return the pokemon information', (expect) => {
+    localStorage.removeItem('SELECTED');
+    const testCart = [
+        { id: '1', shown: 1 }
+    ]
+
+    localStorage.setItem('CART', JSON.stringify(testCart));
+    setPokedex('1');
+    const actual = getPokedex();
+    expect.deepEqual(actual, testCart);
 });

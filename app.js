@@ -1,5 +1,6 @@
 // import functions and grab DOM elements
 import pokemons from './pokemon.js';
+import { getPokedex, setPokedex } from './utils.js';
 // initialize global state
 
 const poke1Img = document.getElementById('poke-1-img');
@@ -49,6 +50,8 @@ button.addEventListener('click', ()=> {
     encounterPokemon();
 });
 
-
-
-
+for (let pokemon of pokemons) {
+    button.addEventListener('click', ()=> {
+        setPokedex(pokemon.id);
+    })
+};

@@ -15,3 +15,17 @@ export function getPokedex() {
     return pokedex;
 }
 
+export function setPokedex(id) {
+    const pokedex = getPokedex();
+    const pokedexItem = findById(id, pokedex);
+
+    if (pokedexItem.id === id) {
+        pokedexItem.shown++;
+    } else {
+        const newItem = { id: id, shown: 1 };
+        pokedex.push(newPokemon);
+    }
+    const stringPokemon = JSON.stringify(pokedex);
+    localStorage.setItem('SELECTED', stringPokemon);
+}
+
