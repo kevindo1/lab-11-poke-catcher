@@ -64,8 +64,6 @@ button.addEventListener('click', ()=> {
       const chosenId = Number(chosenRadio.value);
       caughtPokemon(chosenId);
     }
-
-    console.log(chosenRadio);
     generatePokemon();
 });
 

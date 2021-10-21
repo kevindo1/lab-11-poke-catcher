@@ -1,7 +1,7 @@
-export function findById(id, pokemons) {
-    for (let pokemon of pokemons) { 
-        if (pokemon.id === id) {
-            return pokemon;
+export function findById(id, items) {
+    for (let item of items) { 
+        if (item.id === id) {
+            return item;
         }
     }
 }
