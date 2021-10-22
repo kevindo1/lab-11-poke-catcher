@@ -2,8 +2,8 @@
 // loop through results
 // append results to html page
 
-import pokemons from "../pokemon.js";
-import { findById, getPokedex } from "../utils.js";
+import pokemons from '../pokemon.js';
+import { findById, getPokedex } from '../utils.js';
 
 const main = document.getElementById('main');
 
@@ -15,7 +15,6 @@ for (let item of results) {
 
     const img = document.createElement('img');
     img.src = pokemon.url_image;
-    console.log(pokemon.url_image)
 
     const header = document.createElement('h2');
     header.textContent = pokemon.pokemon;

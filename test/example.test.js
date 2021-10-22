@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import pokemons from '../pokemon.js'
+import pokemons from '../pokemon.js';
 import { findById, getPokedex, encounterPokemon, caughtPokemon } from '../utils.js';
 
 const test = QUnit.test;
@@ -55,7 +55,7 @@ test('getPokedex should return the pokemon information', (expect) => {
     localStorage.removeItem('RESULTS');
     const expected = [
         { id: '1', name: 'bulbasaur', encountered: '1', caught: '0' }
-    ]
+    ];
 
     localStorage.setItem('RESULTS', JSON.stringify(expected));
 
@@ -78,39 +78,39 @@ test('getPokedex should return the pokemon information', (expect) => {
 test('encounterPokemon increments the shown key when the item exists in results', (expect)=> {
     localStorage.removeItem('RESULTS');
     const testPokedex = [];
-    localStorage.setItem('RESULTS', JSON.stringify(testPokedex))
+    localStorage.setItem('RESULTS', JSON.stringify(testPokedex));
     encounterPokemon(1);
     const actual = getPokedex();
     const expected = [
         { id: 1, encountered: 1, caught: 0 }
-    ]
+    ];
     expect.deepEqual(actual, expected);
-})
+});
 
 test('encounterPokemon increments the shown key when the item exists in results', (expect)=> {
     localStorage.removeItem('RESULTS');
     const testPokedex = [
         { id: 1, encountered: 1, caught: 0 }
-    ]
-    localStorage.setItem('RESULTS', JSON.stringify(testPokedex))
+    ];
+    localStorage.setItem('RESULTS', JSON.stringify(testPokedex));
     encounterPokemon(1);
     const actual = getPokedex();
     const expected = [
         { id: 1, encountered: 2, caught: 0 }
-    ]
+    ];
     expect.deepEqual(actual, expected);
-})
+});
 
 test('caughtPokemon increments when caught', (expect)=> {
     localStorage.removeItem('RESULTS');
     const testPokedex = [
         { id: 1, encountered: 1, caught: 0 }
     ];
-    localStorage.setItem('RESULTS', JSON.stringify(testPokedex))
+    localStorage.setItem('RESULTS', JSON.stringify(testPokedex));
     caughtPokemon(1);
     const actual = getPokedex();
     const expected = [
         { id: 1, encountered: 1, caught: 1 }
-    ]
+    ];
     expect.deepEqual(actual, expected);
-})
+});

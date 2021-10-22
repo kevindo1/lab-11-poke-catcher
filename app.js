@@ -22,13 +22,13 @@ const generatePokemon = ()=> {
     let randPoke3 = Math.floor(Math.random() * pokemons.length);
 
     while (
-      randPoke1 === randPoke2 || 
-      randPoke1 === randPoke3 ||
-      randPoke2 === randPoke3
+        randPoke1 === randPoke2 || 
+        randPoke1 === randPoke3 ||
+        randPoke2 === randPoke3
     ) {
-      randPoke1 = Math.floor(Math.random() * pokemons.length);
-      randPoke2 = Math.floor(Math.random() * pokemons.length);
-      randPoke3 = Math.floor(Math.random() * pokemons.length);
+        randPoke1 = Math.floor(Math.random() * pokemons.length);
+        randPoke2 = Math.floor(Math.random() * pokemons.length);
+        randPoke3 = Math.floor(Math.random() * pokemons.length);
     }
 
     let poke1 = pokemons[randPoke1];
@@ -53,16 +53,16 @@ encounterPokemon();
 
 button.addEventListener('click', ()=> {
     if (totalPlays >= 10) {
-        window.location.href='./results/index.html';
+        window.location.href = './results/index.html';
     } else {
-      totalPlays++;
+        totalPlays++;
     }
 
     const chosenRadio = document.querySelector('input[type=radio]:checked');
 
     if (chosenRadio) {
-      const chosenId = Number(chosenRadio.value);
-      caughtPokemon(chosenId);
+        const chosenId = Number(chosenRadio.value);
+        caughtPokemon(chosenId);
     }
     generatePokemon();
 });
