@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="results.css">
     <link rel="stylesheet" href="../styles/reset.css">
     <title>Results Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 </head>
 <body>
     <main>
         <a href="../">Back to Poke Catcher</a>
         <section id="main" class="main-section">
         </section>
-    
+
+        <section class="chart">
+            <canvas id="results-chart" width="600" height="600"></canvas>
+        </section>
     </main>
     <script type="module" src="./results.js"></script>
 </body>
