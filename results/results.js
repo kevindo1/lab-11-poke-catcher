@@ -14,7 +14,8 @@ for (let item of results) {
     const div = document.createElement('div');
 
     const img = document.createElement('img');
-    img.src = pokemon.url_image; 
+    img.src = pokemon.url_image;
+    console.log(pokemon.url_image)
 
     const header = document.createElement('h2');
     header.textContent = pokemon.pokemon;
@@ -28,5 +29,3 @@ for (let item of results) {
     div.append(img, header, resultSpan1, resultSpan2);
     main.appendChild(div);
 }
-
-console.log('hello world')
