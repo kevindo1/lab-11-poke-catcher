@@ -5,6 +5,7 @@ body {
     background-image: url(../assets/pokemon-stadium.png);
     background-position: center;
     background-size: cover;
+    background-repeat: round;
     height: 100%;
     width: 100%;
     margin: auto;
@@ -19,7 +20,10 @@ img {
     height: 200px;
     width: 200px;
 }
-
+h2 {
+    background-color: black;
+}
 span {
     margin: 30px;
+    background-color: black;
 }
