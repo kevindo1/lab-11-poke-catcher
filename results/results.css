@@ -1,13 +1,9 @@
 body {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     background-image: url(../assets/pokemon-stadium.png);
     background-position: center;
     background-size: cover;
     height: 100%;
     width: 100%;
-    margin: auto;
     color: white;
 }
 
@@ -32,4 +28,8 @@ span {
 
 .chart {
     background-color: white;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    margin: auto;
 }
