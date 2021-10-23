@@ -49,7 +49,6 @@ const generatePokemon = ()=> {
 
 let totalPlays = 0; 
 generatePokemon();
-encounterPokemon();
 
 button.addEventListener('click', ()=> {
     if (totalPlays >= 10) {
